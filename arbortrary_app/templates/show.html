@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Band Together</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="d-flex justify-content-between align-items-center col-12">
+            <div class="container">
+                <div class="row">
+                <div class="col">
+                    <h1>Arbortrary</h1>
+                    <br>
+                    <p>A site to track randomly planted trees</p>            
+                </div>
+                <div class="col" style="text-align: right;">
+                    <a href="/user/account" style="display:inline-block;margin-right:10px;">My Trees</a>
+                    <h1 style="display:inline-block">Welcome {{user.first_name}}!</h1>
+                    <div>
+                        <a href="/dashboard" class="btn btn-primary">Dashboard</a>
+                        <a href="/logout" class="btn btn-info">Logout</a>            
+                </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+
+    <h1>{{tree.species}} planted by {{tree.user_id.first_name}} {{tree.user_id.last_name}}</h1>
+    <h2>WHERE: {{tree.location}}</h2>
+    <h2>WHEN: {{tree.date.strftime('%B %d %Y')}} </h2>
+    <h2>Reason: {{tree.reason}}</h2>
+</body>
+</html>
